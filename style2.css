@@ -1,0 +1,299 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#backgroundVideo {
+    position: fixed;  /* Keeps the video fixed in place */
+    top: 50%;         /* Centers the video vertically */
+    left: 50%;        /* Centers the video horizontally */
+    min-width: 100%;  /* Ensures the video covers the width */
+    min-height: 100%; /* Ensures the video covers the height */
+    z-index: -1;      /* Places video behind other content */
+    object-fit: cover; /* Ensures the video maintains its aspect ratio and covers the area */
+    transform: translate(-50%, -50%); /* Centers the video */
+    opacity: 0.7;     /* Optional: Makes the video slightly transparent */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* Header styles */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Hero section styles */
+#hero {
+    height: 100vh;
+    background: url('your-background-image.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffcc00, #ff7f50);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.explore-button {
+    padding: 15px 40px;
+    font-size: 1.3em;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 15px rgba(255, 204, 0, 0.4);
+    text-decoration: none;
+    color: #121212;
+}
+
+.explore-button:hover {
+    background-color: #e6b800;
+    transform: scale(1.1);
+    box-shadow: 0 12px 20px rgba(255, 204, 0, 0.7);
+}
+
+/* Model options */
+.model-options {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    transition: opacity 0.5s ease;
+}
+
+.model-options.hidden {
+    display: none;
+}
+
+.model-option {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #121212;
+    text-decoration: none;
+    border-radius: 20px;
+    margin: 0 15px;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.model-option:hover {
+    background-color: #e6b800;
+    transform: scale(1.1);
+}
+/* Add styles for the "Choose Your Model" button */
+#chooseModelButton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Add hover effect with scaling */
+#chooseModelButton:hover {
+    transform: scale(1.1);
+    background-color: #3577c3; /* Slightly darker green */
+}
+
+/* Add an active click effect */
+#chooseModelButton:active {
+    transform: scale(0.95);
+    background-color: #611130; /* Even darker green on click */
+}
+
+/* Animation for showing model options */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for hiding model options */
+@keyframes slideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Show the model options with slide-down effect */
+#modelOptions.show {
+    animation: slideDown 0.5s forwards;
+}
+
+/* Hide the model options with slide-up effect */
+#modelOptions.hidden {
+    animation: slideUp 0.5s forwards;
+}
+
+
+/* About Section */
+#about {
+    padding: 50px;
+    text-align: center;
+    background-color: #1e1e1e;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+/* FAQ Section */
+#faq {
+    padding: 50px;
+    background-color: #292929;
+}
+
+#faq h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    font-size: 1.8em;
+    color: #ffcc00;
+}
+
+.faq-item p {
+    font-size: 1.2em;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact form label {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+#contact form input, #contact form textarea {
+    width: 60%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.1em;
+}
+
+#contact form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.3em;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#contact form button:hover {
+    background-color: #e6b800;
+    transform: scale(1.1);
+}
+
+/* Footer styles */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 15px 0;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.6);
+}
