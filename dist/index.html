@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Solar System Orrery</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-U4MFR8VV.css">
+</head>
+<body>
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="/assets/home-DymCKlO7.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+   
+
+    <section id="hero">
+        <h1>Let's Explore Our Solar System</h1>
+        <p>Embark on a journey to explore the planets, moons, and near-Earth objects.</p>
+        <a href="/index3.html" class="explore-button">Start Exploring</a>
+
+    </section>
+
+    
+
+    <footer>
+        <p>Solar System Explorer &copy; 2024</p>
+    </footer>
+
+    <script>
+       
+// Toggle the visibility of 2D/3D model options
+document.getElementById('chooseModelButton').addEventListener('click', function() {
+    const modelOptions = document.getElementById('modelOptions');
+    modelOptions.classList.toggle('hidden');
+    
+    // Toggle button text for better user interaction
+    if (modelOptions.classList.contains('hidden')) {
+        this.textContent = 'Choose Your Model';
+    } else {
+        this.textContent = 'Close Model Options';
+    }
+});
+
+// Handle contact form submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();  // Prevent page reload
+    
+    // Capture form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Basic validation (more advanced validation can be added if needed)
+    if (!name || !email || !message) {
+        alert('Please fill in all the fields before submitting.');
+    } else {
+        // Display a success message
+        alert(`Thank you, ${name}! Your message has been sent.`);
+        
+        // Clear form fields after submission
+        document.getElementById('contactForm').reset();
+    }
+});
+
+
+        
+    </script>
+</body>
+</html>

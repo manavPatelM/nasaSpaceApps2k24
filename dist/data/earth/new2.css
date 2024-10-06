@@ -1,0 +1,89 @@
+/* General body styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #080808;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    height: 100vh; /* Ensure body takes full viewport height */
+}
+
+/* Video as Background */
+.background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Make sure it's behind other content */
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.7; /* Optional: Set video transparency for better content visibility */
+}
+
+/* Grid container for 3 rows and 2 columns */
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    grid-template-rows: repeat(3, 1fr);    /* 3 equal rows */
+    row-gap: 50px;
+    column-gap: 600px; /* Space between the grid items */
+    padding: 50px;
+    position: relative;
+    z-index: 1; /* Ensures the grid is on top of the video */
+    max-width: 1200px; /* Control grid width */
+    margin-top: 20px;
+    margin-left: 100px; /* Center the grid */
+    margin-right: 100px; 
+}
+
+/* Individual container styles */
+.info-container {
+    padding: 2px;
+    border-radius: 10px;
+    text-align: center;
+    color: rgba(136, 149, 207, 0.827);
+    font-size: 1.2rem;
+    z-index: 1;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid rgba(16, 44, 159, 0.842);  
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Hover info styling */
+.hover-info {
+    position: absolute;
+    left: 160px; /* Distance from the main container */
+    top: 0;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 2;
+    font-size: 1rem;
+    border:3px solid rgba(150, 151, 150, 0.415);
+    
+}
+
+/* Hover effect to show info */
+.info-container:hover .hover-info {
+    opacity: 1;
+    visibility: visible;
+    
+}
+
+.info-container:hover {
+    transform: scale(1.1); /* Slightly increase the size */
+    background-color: rgba(31, 31, 34, 0.6);
+    box-shadow: 0px 8px 16px rgba(97, 86, 86, 0.652); /* Enhanced shadow on hover */
+    z-index: 2; /* Bring hovered container to the top */
+    
+}
